@@ -302,6 +302,7 @@
 	font-size: 44px;
 	line-height: 62px;
 	color: rgba(36, 95, 65, 1);
+	text-align: center;
 }
 
 .normal_easy {
@@ -371,13 +372,13 @@
 	background: url('./images/icon_iir.svg')no-repeat center/contain;
 }
 
-.normal_easy_dots {
+.normal_dots {
 	display: flex;
 	justify-content: center;
 	margin-top: 36px;
 }
 
-.normal_easy_dot {
+.normal_dot {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -387,11 +388,11 @@
 	cursor: pointer;
 }
 
-.normal_easy_dot.on {
+.normal_dot.on {
 	border: 0.5px solid rgba(36, 95, 65, 1);
 }
 
-.normal_easy_dot::before {
+.normal_dot::before {
 	content: "";
 	display: block;
 	width: 5px;
@@ -400,10 +401,59 @@
 	border-radius: 100%;
 }
 
-.normal_easy_dot.on::before {
+.normal_dot.on::before {
 	background-color: rgba(36, 95, 65, 1);
 }
 
-.normal_easy_dot:hover::before {
+.normal_dot:hover::before {
 	background-color: rgba(36, 95, 65, 1);
+}
+
+.normal_secret {
+	margin-top: 120px;
+}
+
+.normal_secret_group {
+	display: flex;
+	margin-top: 80px;
+}
+
+.normal_secret_item {
+	flex: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-direction: column;
+	width: 388px;
+	height: 293px;
+	margin: 0 19px;
+	padding-top: 54px;
+	padding-left: 70px;
+	padding-bottom: 40px;
+	color: #fff;
+}
+
+.normal_secret_txt {
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.normal_secret_more {
+	position: relative;
+	padding-right: 10px;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 28px;
+}
+
+.normal_secret_more:after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 1px;
+	background-color: rgba(255, 255, 255, 1);
 }
