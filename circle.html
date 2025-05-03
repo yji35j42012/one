@@ -24,42 +24,29 @@
 
 		@keyframes shimmer {
 			0% {
-				--shimmer: 0deg;
-			}
-
-			100% {
-				--shimmer: 360deg;
-			}
-		}
-
-		@keyframes shine {
-			0% {
 				opacity: 0;
+				transform: rotate(0deg);
 			}
-
 			15% {
 				opacity: 1;
 			}
-
 			55% {
 				opacity: 1;
 			}
-
 			100% {
 				opacity: 0;
+				transform: rotate(360deg);
 			}
 		}
 
-		@keyframes text {
-			0% {
-				background-position: 100% center;
-			}
 
-			100% {
-				background-position: -100% center;
-			}
+
+		
+		.normal_circle {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
 		}
-
 		div {
 			color: var(--bg);
 			font-weight: 600;
@@ -75,18 +62,6 @@
 			border-radius: 0.66em;
 			scale: 1;
 			transition: all var(--spring-duration) var(--spring-easing);
-		}
-
-		div:hover:not(:active),
-		div.active {
-			transition-duration: calc(var(--spring-duration)*0.5);
-			scale: 1.2;
-			box-shadow: 0 4px 8px -2px hsl(var(--glow-hue) 50% 20% / 50%), inset 0 0 0 transparent;
-		}
-
-		div:active {
-			scale: 1.1;
-			transition-duration: calc(var(--spring-duration)*0.5);
 		}
 
 		.shimmer {
@@ -105,58 +80,35 @@
 					transparent 100%);
 			mask-size: cover;
 			mix-blend-mode: plus-lighter;
-			animation: shimmer 1s linear infinite both;
-		}
-
-		div:hover .shimmer::before,
-		div:hover .shimmer::after,
-		div.active .shimmer::before,
-		div.active .shimmer::after {
-			opacity: 1;
-			animation: shine 1.2s ease-in 1 forwards;
+			animation: shimmer 4s linear infinite both;
 		}
 
 		.shimmer::before,
 		.shimmer::after {
 			transition: all 0.5s ease;
-			opacity: 0;
+			opacity: 1;
 			content: "";
 			border-radius: inherit;
 			position: absolute;
 			mix-blend-mode: color;
 			inset: 40px;
 			pointer-events: none;
+			animation: shine 1.2s ease-in 1 infinite both;
 		}
 
 		.shimmer::before {
 			box-shadow: 0 0 3px 2px hsl(var(--glow-hue) 20% 95%),
-				0 0 7px 4px hsl(var(--glow-hue) 20% 80%),
-				0 0 13px 4px hsl(var(--glow-hue) 50% 70%),
-				0 0 25px 5px hsl(var(--glow-hue) 100% 70%);
+				0 0 7px 4px hsl(var(--glow-hue) 20% 80%);
 			z-index: -1;
 		}
 
 		.shimmer::after {
 			box-shadow: inset 0 0 0 1px hsl(var(--glow-hue) 70% 95%),
-				inset 0 0 2px 1px hsl(var(--glow-hue) 100% 80%),
-				inset 0 0 5px 2px hsl(var(--glow-hue) 100% 70%);
+				inset 0 0 2px 1px hsl(var(--glow-hue) 100% 80%);
 			z-index: 2;
 		}
 
-		div .text {
-			color: transparent;
-			background-clip: text;
-			background-color: var(--bg);
-			background-image: linear-gradient(120deg, transparent, hsla(var(--glow-hue), 100%, 80%, 0.66) 40%, hsla(var(--glow-hue), 100%, 90%, .9) 50%, transparent 52%);
-			background-repeat: no-repeat;
-			background-size: 300% 300%;
-			background-position: center 200%;
-		}
-
-		div:hover .text,
-		div.active .text {
-			animation: text .66s ease-in 1 both;
-		}
+		
 
 		body,
 		html {
@@ -170,11 +122,6 @@
 					rgb(27, 23, 36) 99.1%);
 		}
 
-		.normal_circle {
-			width: 50px;
-			height: 50px;
-			border-radius: 50%;
-		}
 	</style>
 </head>
 
