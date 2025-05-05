@@ -281,11 +281,6 @@
 
 .normal_shop_item img {
 	width: auto;
-	transition-duration: .3s;
-}
-
-.normal_shop_item:hover img {
-	transform: scale(1.1);
 }
 
 .normal_shop_name {
@@ -664,7 +659,7 @@
 	content: "";
 	display: block;
 	width: 100%;
-	height: 70vh;
+	height: var(--normalH);
 	/* max-height: 70vh; */
 }
 
@@ -675,6 +670,7 @@
 	left: 0;
 	z-index: 1;
 	height: 200vh;
+	min-height: var(--normalH);
 	transform-origin: bottom center;
 	transform: rotate(45deg);
 	opacity: 0;

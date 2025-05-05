@@ -2,8 +2,10 @@ var banner_item = document.querySelectorAll("[name='banner_item']");
 var banner_txt = document.querySelectorAll("[name='banner_txt']")
 var banner_item_count = 0;
 var normal_banner = document.querySelector("#normal_banner");
+var normal_banner_img = document.querySelector("[name='banner_item'] .normal_banner_img");
 console.log('banner_item', banner_item[0].offsetHeight);
-normal_banner.style = `--normalH:${ banner_item[0].offsetHeight }px`;
+
+normal_banner.style = `--normalH:${ normal_banner_img.offsetHeight }px`;
 
 var banner_item_timmer = setInterval(() => {
 	banner_item[banner_item_count].classList.add("out");
@@ -17,6 +19,10 @@ var banner_item_timmer = setInterval(() => {
 		banner_item[banner_item_count].classList.add("on");
 		banner_txt[banner_item_count].classList.add("on");
 	}, 1000);
+
+	for (let oo = 0; oo < banner_item.length; oo++) {
+		banner_item[oo].style = `--normalH:${ banner_item[oo].offsetHeight * 2 }px`;
+	}
 }, 5000);
 
 function clearBanner(i) {
