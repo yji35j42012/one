@@ -20,11 +20,11 @@ var banner_item_timmer = setInterval(() => {
 		banner_txt[banner_item_count].classList.add("on");
 	}, 1000);
 
-	for (let oo = 0; oo < banner_item.length; oo++) {
-		banner_item[oo].style = `--normalH:${ banner_item[oo].offsetHeight * 2 }px`;
-	}
-}, 5000);
 
+}, 5000);
+for (let oo = 0; oo < banner_item.length; oo++) {
+	banner_item[oo].style = `--normalH:${ banner_item[oo].offsetHeight * 2 }px`;
+}
 function clearBanner(i) {
 	setTimeout(() => {
 		banner_item[i].classList.remove("on");
