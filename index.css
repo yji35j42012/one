@@ -281,8 +281,11 @@
 
 .normal_shop_item img {
 	width: auto;
+	transition-duration: .3s;
 }
-
+.normal_shop_item:hover img{
+	transform: scale(1.1);
+}
 .normal_shop_name {
 	margin-top: 23px;
 	font-size: 20px;
