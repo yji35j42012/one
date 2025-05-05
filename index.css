@@ -664,7 +664,7 @@
 }
 
 .normal_banner_item {
-	/* pointer-events: none; */
+	pointer-events: none;
 	position: absolute;
 	top: 35px;
 	left: 0;
