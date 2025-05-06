@@ -283,9 +283,11 @@
 	width: auto;
 	transition-duration: .3s;
 }
-.normal_shop_item:hover img{
+
+.normal_shop_item:hover img {
 	transform: scale(1.1);
 }
+
 .normal_shop_name {
 	margin-top: 23px;
 	font-size: 20px;
@@ -688,6 +690,7 @@
 .normal_banner_item.on.out {
 	opacity: 0;
 	transform: rotate(-45deg);
+	transition: opacity .8s, transform 2.5s;
 }
 
 .normal_banner_item._first {
