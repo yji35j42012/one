@@ -64,12 +64,6 @@
 	background: url('./images/icon_cart.svg');
 }
 
-
-/* .near {
-	height: 1067px;
-	background: url('./images/terra.png')no-repeat center/cover;
-} */
-
 .normal_picGroup {
 	position: relative;
 	display: flex;
@@ -78,15 +72,13 @@
 	height: 1154px;
 }
 
-.normal_picItem {}
-
 .normal_picItem:nth-child(1) {
 	width: 100%;
 	height: 734px;
 	background-image: url('./images/pic1.jpg');
 	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: top center;
+	/* background-attachment: fixed;
+	background-position: top center; */
 	background-size: cover;
 }
 
