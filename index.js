@@ -33,7 +33,7 @@ function clearBanner(i) {
 		banner_txt[i].classList.remove("out");
 	}, 2500);
 }
-
+var normal_stick = document.querySelector(".normal_stick");
 window.addEventListener('scroll', () => {
 	console.log('scroll', window.scrollY);
 	// console.log('normal_stick', normal_stick.offsetTop);
@@ -121,4 +121,4 @@ window.addEventListener('scroll', () => {
 // 	secret_dot_item[swipper_secret_count].classList.add("on");
 // }
 // var normal_banner_bg1 = document.querySelector(".normal_banner_bg1");
-// var normal_stick = document.querySelector(".normal_stick");
+// 

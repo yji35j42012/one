@@ -29,6 +29,12 @@
 	display: flex;
 }
 
+@media screen and (max-width:1024px) {
+	.noraml_menu {
+		display: none;
+	}
+}
+
 .normal_menu_item {
 	color: rgba(255, 255, 255, 1);
 }
