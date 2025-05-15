@@ -644,26 +644,8 @@
 .normal_banner {
 	position: relative;
 	width: 100%;
-	/* padding-bottom: 50px; */
+	height: 100vh;
 	background-color: rgba(36, 95, 65, 1);
-}
-
-.normal_banner_terraTop,
-.normal_banner_bg1 {
-	position: relative;
-}
-
-.normal_banner_bg1 {
-	padding-top: 200px;
-	background: url('./images/terra_bottom.png')no-repeat center top/200%;
-}
-
-.normal_banner::before {
-	content: "";
-	display: block;
-	width: 100%;
-	height: var(--normalH);
-	/* max-height: 70vh; */
 }
 
 .normal_banner_item {
@@ -672,6 +654,9 @@
 	top: 35px;
 	left: 0;
 	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
 	height: 200vh;
 	min-height: var(--normalH);
 	transform-origin: bottom center;
@@ -691,12 +676,6 @@
 	transition: opacity .8s, transform 2.5s;
 }
 
-.normal_banner_item._first {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-}
-
 .normal_banner_img {
 	width: 472px;
 	margin: 0 auto;
@@ -704,7 +683,8 @@
 
 .normal_banner_img1_1 {
 	position: absolute;
-	top: 655px;
+	/* top: 655px; */
+	bottom: calc(100vh - 35px);
 	left: 109px;
 	right: 0;
 	width: 167px;
@@ -750,38 +730,117 @@
 	opacity: 0;
 }
 
+.normal_circle {
+	pointer-events: none;
+	position: absolute;
+	top: 225px;
+	left: 0;
+	right: 0;
+	width: 1086px;
+	height: 1086px;
+	margin: auto;
+	border: 0.5px solid rgba(255, 255, 255, .3);
+	border-radius: 50%;
+}
+
+.normal_shimmer {
+	position: absolute;
+	inset: -40px;
+	border-radius: inherit;
+	mask-image: conic-gradient(from var(--shimmer, 0deg),
+			transparent 0%,
+			transparent 10%,
+			black 36%,
+			black 45%,
+			transparent 50%,
+			transparent 60%,
+			black 85%,
+			black 95%,
+			transparent 100%);
+	mask-size: cover;
+	mix-blend-mode: plus-lighter;
+	animation: shimmer 8s linear infinite both;
+}
+
+.normal_shimmer::before,
+.normal_shimmer::after {
+	transition: all 0.5s ease;
+	opacity: 1;
+	content: "";
+	border-radius: inherit;
+	position: absolute;
+	mix-blend-mode: color;
+	inset: 40px;
+	pointer-events: none;
+	animation: shine 1.2s ease-in 1 infinite both;
+}
+
+.normal_shimmer::before {
+	box-shadow: 0 0 3px 2px hsl(var(--glow-hue) 20% 95%),
+		0 0 7px 4px hsl(var(--glow-hue) 20% 80%);
+	z-index: -1;
+}
+
+.normal_shimmer::after {
+	box-shadow: inset 0 0 0 1px hsl(var(--glow-hue) 70% 95%),
+		inset 0 0 2px 1px hsl(var(--glow-hue) 100% 80%);
+	z-index: 2;
+}
+
+@keyframes shimmer {
+	0% {
+		opacity: 0;
+		transform: rotate(360deg);
+	}
+
+	15% {
+		opacity: 1;
+	}
+
+	55% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+		transform: rotate(0deg);
+	}
+}
+
+
 .normal_banner_wt {
 	position: absolute;
-	top: 0;
+	bottom: 0;
 	left: 0;
-	transform: translateY(-49%);
 }
 
-.normal_banner_bg1txt {
-	position: absolute;
-	right: 128px;
-	bottom: 476px;
-	display: inline-block;
-	max-width: 492px;
-	padding: 72px 55px 101px 69px;
-	font-weight: 400;
-	font-size: 18px;
-	line-height: 28px;
-	background-color: rgba(36, 95, 65, 1);
-	color: #fff;
-}
-
-.normal_banner_bg1txt::before {
-	content: attr(data-txt);
-	display: block;
-	font-weight: 500;
-	font-size: 32px;
-	line-height: 45px;
-}
-
-.normal_banner_bg1>img {
+.normal_terra {
 	position: relative;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(36, 95, 65, 1);
 }
+
+.normal_terra_top {}
+
+.normal_banner_bg1 {
+	padding-top: 200px;
+	background: url('./images/terra_bottom.png')no-repeat center top/200%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .normal_stick_pic1 {
 	position: absolute;
